@@ -1,0 +1,30 @@
+{
+  "name": "javascript-alarm-clock",
+  "version": "1.0.0",
+  "description": "A handy little alarm clock built with javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liamMellor/JavaScript-Alarm-Clock.git"
+  },
+  "keywords": [
+    "liam",
+    "mellor",
+    "alarm",
+    "clock",
+    "javascript"
+  ],
+  "author": "Liam Mellor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liamMellor/JavaScript-Alarm-Clock/issues"
+  },
+  "homepage": "https://github.com/liamMellor/JavaScript-Alarm-Clock#readme",
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0"
+  }
+}
