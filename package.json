@@ -4,7 +4,8 @@
   "description": "A handy little alarm clock built with javascript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "styles": "node-sass --include-path scss scss/main.scss index.css",
+    "watch": "nodemon -e scss -x \"npm run styles\""
   },
   "repository": {
     "type": "git",
