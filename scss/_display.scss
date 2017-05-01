@@ -2,28 +2,53 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin: 200px auto 0;
-	width: 80%;
 
-	/* Hiding the native input number controls */
-	input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-		display: none;
-		margin: 0;
-	}
-	&__slot, &__period, &__colon {
+	&__slot, &__colon {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
 		flex: 1 1 auto;
-		text-align: center;
-		font-size: 48px;
 		width: 50px;
 	}
-	&__slot {
+	&__slot, &__colon, &__number {
+		text-align: center;
+		font-size: 48px;
+	}
+
+
+	&__arrow {
+		height: 32px;
+		width: 32px;
+		&--up {
+			transform: rotate(-90deg);
+		}
+		&--down {
+			transform: rotate(90deg);
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	&__option {
+		margin: 20px 0px;
+	}
+
+	&__number {
 		background-color: $primary-background;
 		color: $primary-text;
 		padding: 0;
 		border: none;
+		/* Hiding the native input number controls */
+		&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+			display: none;
+			margin: 0;
+		}
 	}
+
 	&__colon {
 	}
+
 	&__period {
 	}
 }
