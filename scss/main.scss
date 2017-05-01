@@ -1,4 +1,5 @@
 @import "variables";
+@import "display";
 
 html, body {
  margin: 0;
@@ -6,4 +7,15 @@ html, body {
  font-family: $primary-font-family;
  background-color: $primary-background;
  color: $primary-text;
+}
+
+body.light {
+	background-color: $secondary-background;
+	color: $secondary-text;
+}
+
+#container {
+	margin: auto;
+	padding: 20px;
+	max-width: 1000px;
 }

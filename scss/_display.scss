@@ -1,0 +1,29 @@
+.display {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: 200px auto 0;
+	width: 80%;
+
+	/* Hiding the native input number controls */
+	input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+		display: none;
+		margin: 0;
+	}
+	&__slot, &__period, &__colon {
+		flex: 1 1 auto;
+		text-align: center;
+		font-size: 48px;
+		width: 50px;
+	}
+	&__slot {
+		background-color: $primary-background;
+		color: $primary-text;
+		padding: 0;
+		border: none;
+	}
+	&__colon {
+	}
+	&__period {
+	}
+}
