@@ -2,6 +2,8 @@
 
 A handy little alarm clock built with javascript and SystemJS
 
+Check it out at liam-mellor.com/JavaScript-Alarm-Clock
+
 ## Run the Project
 
 You can serve the app on a mini server for yourself by following these commands.
