@@ -1,15 +1,17 @@
 'use strict';
 
 import Alarm from './alarm';
+import AlarmsView from './alarmsView';
 import { hoursAreValid, minutesAreValid } from './utility';
 
 class Controller {
 
-	constructor(app, clock, display, controls) {
+	constructor(app, clock, display, controls, alarms) {
 		this.alarmClock   = app;
 		this.clock        = clock;
 		this.displayView  = display;
 		this.controlsView = controls;
+		this.alarmsView   = alarms;
 	}
 
 	// Updtes the App, Display, and Clock once every second
@@ -54,9 +56,10 @@ class Controller {
 			const newAlarm = new Alarm(hours, mins, period);
 			if (newAlarm.valid()) {
 				this.alarmClock.addAlarm(newAlarm);
+				this.alarmsView.addAlarm(newAlarm);
 			}
 			else {
-				console.log('invalid alarm');
+				this.alarmsView.showError();
 			}
 		});
 	}

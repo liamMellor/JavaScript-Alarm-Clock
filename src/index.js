@@ -8,6 +8,7 @@ import AlarmClock from './alarmClock';
 // Views
 import DisplayView from './displayView';
 import ControlsView from './controlsView';
+import AlarmsView from './alarmsView';
 // Controller
 import Controller from './controller';
 
@@ -18,22 +19,29 @@ const mins    = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 const period  = document.getElementById('period');
 
-
-// Alarm Elements
+// Control Elements
 const controlsForm = document.getElementById('controlsForm');
 const hourInput    = document.getElementById('hourInput');
 const minuteInput  = document.getElementById('minuteInput');
 const amButton     = document.getElementById('periodButton-am');
 const pmButton     = document.getElementById('periodButton-pm');
 
+// Alarms Element
+const alarms      = document.getElementById('alarms');
+const alarmsError = document.getElementById('alarmsError');
+
 
 // MVC components
 const ClockInstance          = new Clock();
 const AlarmClockApp          = new AlarmClock(ClockInstance);
+
 const AlarmClockDisplayView  = new DisplayView(hours, mins, seconds, period);
 // Pass pmButton as the initial active periodButton
 const AlarmClockControlsView = new ControlsView(hourInput, minuteInput, pmButton);
-const AlarmClockController   = new Controller(AlarmClockApp, ClockInstance, AlarmClockDisplayView, AlarmClockControlsView);
+const AlarmClockAlarmsView   = new AlarmsView(alarms, alarmsError);
+
+
+const AlarmClockController   = new Controller(AlarmClockApp, ClockInstance, AlarmClockDisplayView, AlarmClockControlsView, AlarmClockAlarmsView);
 // Bind a callback for each Date object update called from the the timer
 const TimerInstance          = new Timer(AlarmClockController.appUpdater.bind(AlarmClockController));
 

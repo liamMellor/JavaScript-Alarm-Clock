@@ -1,6 +1,7 @@
 'use strict'
 
 import ringer from './ringer';
+import alarmsView from './alarmsView';
 
 class AlarmClock {
 

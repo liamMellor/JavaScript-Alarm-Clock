@@ -19,7 +19,8 @@ const convertToDoubleDigit = (number) => {
 }
 
 const hoursAreValid = (hours) => {
-	return !Number.isNaN(hours) && typeof hours === 'number' & hours >= 0 && hours <= 12;
+	console.log(hours);
+	return !Number.isNaN(hours) && typeof hours === 'number' & hours > 0 && hours <= 12;
 }
 
 const minutesAreValid = (mins) => {
