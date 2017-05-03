@@ -17,6 +17,9 @@ class Controller {
 		this.clock.setDate(date);
 		this.alarmClock.setClock(this.clock);
 		this.display.setTime(this.clock);
+		if (this.clock.getSeconds() === 0) {
+			this.alarmClock.checkIfAlarmShouldRing();
+		}
 	}
 
 	// Sets a click listener on the active period button and sets the active period in the alarmClock app
