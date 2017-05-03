@@ -19,18 +19,20 @@ The Alarm Clock is built with ES6 JavaScript modules and classes. Since there is
 
 ## Further Steps:
 
-Sometime soon I'd like to: 
+Sometime soon I'd like to:
 
-1. Improve on the design. I think it looks nice but it could look NICER!
+1. uglify and minify the code so it doesn't take up so much space.
 
-2. Prevent duplicate alarms from being added to the list.
+2. Improve on the design. I think it looks nice but it could look NICER!
 
-3. Add a visual component to an alarm going off to go along with the audio.
+3. Prevent duplicate alarms from being added to the list.
 
-4. Remove an alarm from the list when it rings.
+4. Add a visual component to an alarm going off to go along with the audio.
 
-5. Implement an on/off toggle for individual alarms.
+5. Remove an alarm from the list when it rings.
 
-6. Add day of the week support.
+6. Implement an on/off toggle for individual alarms.
 
-7. DAY AND NIGHT MODE TOGGLE!
+7. Add day of the week support.
+
+8. DAY AND NIGHT MODE TOGGLE!
