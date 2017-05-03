@@ -5,50 +5,40 @@
 		<meta content="text/html" charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="author" content="Liam Mellor">
-		<meta name="description" content="A handy little alarm clock built with javascript">
-		<meta name="keywords" content="Liam, Mellor, Liam Mellor, Alarm Clock, JavaScript">
+		<meta name="description" content="A handy little alarm clock built with JavaScript and SystemJS">
+		<meta name="keywords" content="Liam, Mellor, Liam Mellor, Alarm Clock, JavaScript, SystemJS">
 		<meta name="resource-type" content="document">
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<base href="/">
-		<!-- <script type="text/javascript" src="index.js" async></script> -->
 	</head>
 
 	<body>
 		<main id="container">
 
-			<section>
-				<form class="display">
-					<div class="display__slot">
-						<img class="display__arrow display__arrow--up" src="images/arrow.png">
-						<input class="display__number display__option" type="number" min="1" max="12" value="05">
-						<img class="display__arrow display__arrow--down" src="images/arrow.png">
-					</div>
-					<span class="display__colon">:</span>
-					<div class="display__slot">
-						<img class="display__arrow display__arrow--up" src="images/arrow.png">
-						<input class="display__number display__option" type="number" min="0" max="60" value="25">
-						<img class="display__arrow display__arrow--down" src="images/arrow.png">
-					</div>
-					<span class="display__colon">:</span>
-					<div class="display__slot">
-						<img class="display__arrow display__arrow--up" src="images/arrow.png">
-						<input class="display__number display__option" type="number" min="0" max="60" value="12">
-						<img class="display__arrow display__arrow--down" src="images/arrow.png">
-					</div>
-					<span class="display__colon">:</span>
-					<div class="display__slot">
-						<img class="display__arrow display__arrow--up" src="images/arrow.png">
-						<div class="display__period display__option">AM</div>
-						<img class="display__arrow display__arrow--down" src="images/arrow.png">
+			<section class="display">
+				<div id="hours" class="display__option"></div>
+				<span class="display__colon">:</span>
+				<div id="minutes" class="display__option"></div>
+				<span class="display__colon">:</span>
+				<div id="seconds" class="display__option"></div>
+				<span class="display__colon">:</span>
+				<div id="period" class="display__option"></div>
+			</section>
+
+			<section class="controls">
+				<form id="controlsForm">
+					<div class="controls__row">
+						<input  id="hourInput" class="controls__row__input" type="number" placeholder="Hour">
+						<input  id="minuteInput" class="controls__row__input" type="number" placeholder="Mins">
+						<button id="periodButton-am" class="controls__row__periodButton" value="AM">AM</button>
+						<button id="periodButton-pm" class="controls__row__periodButton controls__row__periodButton--active" value="PM">PM</button>
 					</div>
 				</form>
+				<button id="controlsCreate" form="controlsForm" type="submit" class="controls__button">Create Alarm</button>
 			</section>
 
-			<section class="buttons">
-				<button class="buttons__create">Create Alarm</button>
-			</section>
-
-			<section class="alarms">
+			<section id="alarms" class="alarms">
+				<div id="alarmsError" class="alarms__error">You have an invalid input. Please correct the red values.</div>
 			</section>
 
 		</main>

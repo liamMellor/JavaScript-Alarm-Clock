@@ -2,53 +2,22 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-
-	&__slot, &__colon {
-		display: flex;
-		flex-flow: column nowrap;
-		align-items: center;
+	&__option, &__colon {
 		flex: 1 1 auto;
 		width: 50px;
-	}
-	&__slot, &__colon, &__number {
 		text-align: center;
-		font-size: 48px;
+		font-size: $primary-font-size-small;
 	}
-
-
-	&__arrow {
-		height: 32px;
-		width: 32px;
-		&--up {
-			transform: rotate(-90deg);
-		}
-		&--down {
-			transform: rotate(90deg);
-		}
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
 	&__option {
-		margin: 20px 0px;
-	}
-
-	&__number {
 		background-color: $primary-background;
 		color: $primary-text;
 		padding: 0;
 		border: none;
-		/* Hiding the native input number controls */
-		&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
-			display: none;
-			margin: 0;
+	}
+
+	@media (min-width: $mobile-break) {
+		&__option, &__colon {
+			font-size: $primary-font-size;
 		}
-	}
-
-	&__colon {
-	}
-
-	&__period {
 	}
 }
