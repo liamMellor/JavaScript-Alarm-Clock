@@ -1,6 +1,6 @@
 'use strict';
 
-class Controls {
+class ControlsView {
 
 	constructor(hoursInput, minutesInput, activePeriodButton) {
 		this.hours              = hoursInput;
@@ -9,15 +9,15 @@ class Controls {
 	}
 
 	setActivePeriodButton(button) {
-		const activeButtonClass = 'alarm__row__periodButton--active';
+		const activeButtonClass = 'controls__row__periodButton--active';
 		this.activePeriodButton.classList.remove(activeButtonClass);
 		button.classList.add(activeButtonClass);
 		this.activePeriodButton = button;
 	}
 
 	setInputClass(valid, input) {
-		const validInputClass   = 'alarm__row__input--active';
-		const invalidInputClass = 'alarm__row__input--invalid'; 
+		const validInputClass   = 'controls__row__input--active';
+		const invalidInputClass = 'controls__row__input--invalid'; 
 		if (valid) {
 			input.classList.remove(invalidInputClass);
 			input.classList.add(validInputClass);
@@ -30,4 +30,4 @@ class Controls {
 
 }
 
-export default Controls;
+export default ControlsView;

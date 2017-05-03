@@ -2,7 +2,7 @@
 
 import { convertToDoubleDigit } from './utility';
 
-class Display {
+class DisplayView {
 
 	/*
 	*	Display accepts HTML elements making up the clock's display
@@ -35,4 +35,4 @@ class Display {
 
 }
 
-export default Display;
+export default DisplayView;

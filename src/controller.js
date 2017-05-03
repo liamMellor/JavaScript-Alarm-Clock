@@ -6,17 +6,17 @@ import { hoursAreValid, minutesAreValid } from './utility';
 class Controller {
 
 	constructor(app, clock, display, controls) {
-		this.alarmClock = app;
-		this.clock      = clock;
-		this.display    = display;
-		this.controls   = controls;
+		this.alarmClock   = app;
+		this.clock        = clock;
+		this.displayView  = display;
+		this.controlsView = controls;
 	}
 
 	// Updtes the App, Display, and Clock once every second
 	appUpdater(date) {
 		this.clock.setDate(date);
 		this.alarmClock.setClock(this.clock);
-		this.display.setTime(this.clock);
+		this.displayView.setTime(this.clock);
 		if (this.clock.getSeconds() === 0) {
 			this.alarmClock.checkIfAlarmShouldRing();
 		}
@@ -27,28 +27,28 @@ class Controller {
 		periodButtons.forEach((button) => {
 			button.addEventListener('click', (event) => {
 				event.preventDefault();
-				this.controls.setActivePeriodButton(event.target);
+				this.controlsView.setActivePeriodButton(event.target);
 				this.alarmClock.setPeriod(event.target.value);
 			});
 		});
 	}
 
-	addAlarmFormListener(alarmForm) {
-		alarmForm.addEventListener('submit', (event) => {
+	addControlsFormListener(controlsForm) {
+		controlsForm.addEventListener('submit', (event) => {
 			event.preventDefault();
 			const hours = parseInt(event.target.hourInput.value, 10);
 			if (hoursAreValid(hours)) {
-				this.controls.setInputClass(true, event.target.hourInput);
+				this.controlsView.setInputClass(true, event.target.hourInput);
 			}
 			else {
-				this.controls.setInputClass(false, event.target.hourInput);
+				this.controlsView.setInputClass(false, event.target.hourInput);
 			}
 			const mins = parseInt(event.target.minuteInput.value, 10);
 			if (minutesAreValid(mins)) {
-				this.controls.setInputClass(true, event.target.minuteInput);
+				this.controlsView.setInputClass(true, event.target.minuteInput);
 			}
 			else {
-				this.controls.setInputClass(false, event.target.minuteInput);
+				this.controlsView.setInputClass(false, event.target.minuteInput);
 			}
 			const period   = this.alarmClock.period;
 			const newAlarm = new Alarm(hours, mins, period);
