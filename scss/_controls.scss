@@ -1,0 +1,70 @@
+.controls {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		padding: 0px 45px;
+		&__input, &__periodButton {
+			flex: 0 0 20%;
+			width: 20%;
+			padding: 0 0 5px 0;
+			text-align: center;
+			font-size: $secondary-font-size-small;
+			background-color: $primary-background;
+			color: $primary-text;
+			border: none;
+			transition: border-color 0.5s ease;
+			outline: none;
+			&--active {
+				padding-bottom: 3px;
+				border-radius: 0px;
+				border-bottom: 2px solid $success-green;
+			}
+			&--invalid {
+				padding-bottom: 3px;
+				border-radius: 0px;
+				border-bottom: 2px solid $fail-red;
+			}
+		}
+		&__input {
+			// Hide the default number controls
+			&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+				display: none;
+				margin: 0;
+			}
+			&::-webkit-input-placeholder {
+				color: $primary-text;
+			}
+		}
+		&__periodButton {
+			cursor: pointer;
+		}
+	}
+
+	&__button {
+		width: 100%;
+		background-color: $primary-background;
+		color: $primary-text;
+		border-style: solid;
+		height: 100px;
+		border-radius: 100px;
+		cursor: pointer;
+		font-size: $primary-font-size-small;
+		transition: border-color 0.5s ease;
+		outline: none;
+		&--ready {
+			border-color: $success-green;
+		}
+	}
+
+	@media (min-width: $mobile-break) {
+		&__row {
+			&__input, &__periodButton {
+				font-size: $secondary-font-size;
+			}
+		}
+		&__button {
+			font-size: $primary-font-size;
+		}
+	}
+}

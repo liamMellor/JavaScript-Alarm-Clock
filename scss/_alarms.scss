@@ -1,0 +1,29 @@
+.alarms {
+
+	&__error {
+		text-align: center;
+		font-size: $secondary-font-size-small;
+		display: none;
+		color: $fail-red;
+		margin-bottom: 20px;
+		&--active {
+			display: block;
+		}
+	}
+
+	&__alarm {
+		padding: 10px 45px;
+		text-align: center;
+		font-size: $primary-font-size-small;
+		border-top: 2px solid;
+	}
+
+	@media (min-width: $mobile-break) {
+		&__error {
+			font-size: $secondary-font-size;
+		}
+		&__alarm {
+			font-size: $primary-font-size
+		}
+	}
+}
