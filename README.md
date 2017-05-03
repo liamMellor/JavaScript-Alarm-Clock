@@ -7,7 +7,9 @@ A handy little alarm clock built with javascript and SystemJS
 	`npm Install`
 2. Run Gulp:
 	`gulp`
-3. Run the server:
+3. Build Styles
+	`npm run styles`
+4. Run the server:
 	`control + c (together to quit Gulp)`
 	`npm start`
 
