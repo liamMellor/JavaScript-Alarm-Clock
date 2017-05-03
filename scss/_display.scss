@@ -2,30 +2,16 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-
-	&__slot, &__colon {
-		display: flex;
-		flex-flow: column nowrap;
-		align-items: center;
+	&__option, &__colon {
 		flex: 1 1 auto;
 		width: 50px;
-	}
-	&__slot, &__colon, &__option {
 		text-align: center;
 		font-size: 48px;
 	}
-
 	&__option {
 		background-color: $primary-background;
 		color: $primary-text;
-		margin: 20px 0px;
 		padding: 0;
 		border: none;
-		/* Hiding the native input number controls */
-		&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
-			display: none;
-			margin: 0;
-		}
 	}
-
 }

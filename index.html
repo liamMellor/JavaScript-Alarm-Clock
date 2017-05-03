@@ -5,39 +5,30 @@
 		<meta content="text/html" charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="author" content="Liam Mellor">
-		<meta name="description" content="A handy little alarm clock built with javascript">
-		<meta name="keywords" content="Liam, Mellor, Liam Mellor, Alarm Clock, JavaScript">
+		<meta name="description" content="A handy little alarm clock built with JavaScript and SystemJS">
+		<meta name="keywords" content="Liam, Mellor, Liam Mellor, Alarm Clock, JavaScript, SystemJS">
 		<meta name="resource-type" content="document">
 		<link rel="stylesheet" type="text/css" href="index.css">
 		<base href="/">
-		<!-- <script type="text/javascript" src="index.js" async></script> -->
 	</head>
 
 	<body>
 		<main id="container">
 
 			<section>
-				<form class="display" id="display">
-					<div class="display__slot">
-						<div id="hours" class="display__option"></div>
-					</div>
+				<div class="display" id="display">
+					<div id="hours" class="display__option"></div>
 					<span class="display__colon">:</span>
-					<div class="display__slot">
-						<div id="minutes" class="display__option"></div>
-					</div>
+					<div id="minutes" class="display__option"></div>
 					<span class="display__colon">:</span>
-					<div class="display__slot">
-						<div id="seconds" class="display__option"></div>
-					</div>
+					<div id="seconds" class="display__option"></div>
 					<span class="display__colon">:</span>
-					<div class="display__slot">
-						<div id="period" class="display__option">AM</div>
-					</div>
-				</form>
+					<div id="period" class="display__option"></div>
+				</div>
 			</section>
 
-			<section class="buttons">
-				<button id="createButton" class="buttons__create">Create Alarm</button>
+			<section class="alarm">
+				<button id="alarmCreate" class="alarm__create">Create Alarm</button>
 			</section>
 
 			<section class="alarms">
