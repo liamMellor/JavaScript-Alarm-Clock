@@ -1,6 +1,43 @@
 .alarm {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 20px;
+		padding: 0px 45px;
+		&__input, &__periodButton {
+			flex: 0 0 20%;
+			text-align: center;
+			font-size: 32px;
+			background-color: $primary-background;
+			color: $primary-text;
+			border: none;
+			transition: border-color 0.5s ease;
+			outline: none;
+			&--active {
+				border-radius: 0px;
+				border-bottom: 2px solid $success-green;
+			}
+			&--invalid {
+				border-radius: 0px;
+				border-bottom: 2px solid $fail-red;
+			}
+		}
+		&__input {
+			// Hide the default number controls
+			&::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+				display: none;
+				margin: 0;
+			}
+			&::-webkit-input-placeholder {
+				color: $primary-text;
+			}
+		}
+		&__periodButton {
+			cursor: pointer;
+		}
+	}
 
-	&__create {
+	&__button {
 		width: 100%;
 		background-color: $primary-background;
 		color: $primary-text;
@@ -9,6 +46,11 @@
 		border-radius: 100px;
 		cursor: pointer;
 		font-size: 48px;
+		transition: border-color 0.5s ease;
+		outline: none;
+		&--ready {
+			border-color: $success-green;
+		}
 	}
 
 }

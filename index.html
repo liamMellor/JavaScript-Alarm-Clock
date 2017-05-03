@@ -15,20 +15,26 @@
 	<body>
 		<main id="container">
 
-			<section>
-				<div class="display" id="display">
-					<div id="hours" class="display__option"></div>
-					<span class="display__colon">:</span>
-					<div id="minutes" class="display__option"></div>
-					<span class="display__colon">:</span>
-					<div id="seconds" class="display__option"></div>
-					<span class="display__colon">:</span>
-					<div id="period" class="display__option"></div>
-				</div>
+			<section class="display">
+				<div id="hours" class="display__option"></div>
+				<span class="display__colon">:</span>
+				<div id="minutes" class="display__option"></div>
+				<span class="display__colon">:</span>
+				<div id="seconds" class="display__option"></div>
+				<span class="display__colon">:</span>
+				<div id="period" class="display__option"></div>
 			</section>
 
 			<section class="alarm">
-				<button id="alarmCreate" class="alarm__create">Create Alarm</button>
+				<form id="alarmForm">
+					<div class="alarm__row">
+						<input  id="hourInput" class="alarm__row__input" type="number" min="1" max="12" placeholder="Hour">
+						<input  id="minuteInput" class="alarm__row__input" type="number" min="0" max="59" placeholder="Mins">
+						<button id="periodButton-am" class="alarm__row__periodButton" value="AM">AM</button>
+						<button id="periodButton-pm" class="alarm__row__periodButton alarm__row__periodButton--active" value="PM">PM</button>
+					</div>
+				</form>
+				<button id="alarmCreate" form="alarmForm" type="submit" class="alarm__button">Create Alarm</button>
 			</section>
 
 			<section class="alarms">

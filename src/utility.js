@@ -18,4 +18,18 @@ const convertToDoubleDigit = (number) => {
 	return parseInt(number,10) < 10 ? '0' + number : number;
 }
 
-export { convert24Hourto12Hour, getAMorPM, convertToDoubleDigit };
+const hoursAreValid = (hours) => {
+	return !Number.isNaN(hours) && typeof hours === 'number' & hours >= 0 && hours <= 12;
+}
+
+const minutesAreValid = (mins) => {
+	return !Number.isNaN(mins) && typeof mins === 'number' & mins >= 0 && mins <= 59;
+}
+
+export {
+	convert24Hourto12Hour,
+	getAMorPM,
+	convertToDoubleDigit,
+	hoursAreValid,
+	minutesAreValid
+};
