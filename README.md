@@ -3,7 +3,7 @@ A handy little alarm clock built with javascript and SystemJS
 
 ## Run the Project
 
-1. Install the local packages:
+1. cd into the main directory (/JavaScript-Alarm-Clock) and install the local packages:
 	`npm Install`
 2. Run Gulp:
 	`gulp`
