@@ -8,13 +8,16 @@ Check it out at liam-mellor.com/JavaScript-Alarm-Clock
 
 You can serve the app on a mini server for yourself by following these commands.
 
-1. cd into the main directory (/JavaScript-Alarm-Clock) and install the local packages:
+
+1. cd into the main directory (/JavaScript-Alarm-Clock)
+2. Install packages
+	`npm install gulp -g`
 	`npm install`
-2. Build Styles
+3. Build Styles
 	`npm run styles`
-3. Run Gulp:
+4. Run Gulp:
 	`gulp`
-4. Run the server:
+5. Run the server:
 	`control + c (together to quit Gulp)`
 	`npm start`
 
