@@ -10,33 +10,15 @@
 		flex: 1 1 auto;
 		width: 50px;
 	}
-	&__slot, &__colon, &__number {
+	&__slot, &__colon, &__option {
 		text-align: center;
 		font-size: 48px;
 	}
 
-
-	&__arrow {
-		height: 32px;
-		width: 32px;
-		&--up {
-			transform: rotate(-90deg);
-		}
-		&--down {
-			transform: rotate(90deg);
-		}
-		&:hover {
-			cursor: pointer;
-		}
-	}
-
 	&__option {
-		margin: 20px 0px;
-	}
-
-	&__number {
 		background-color: $primary-background;
 		color: $primary-text;
+		margin: 20px 0px;
 		padding: 0;
 		border: none;
 		/* Hiding the native input number controls */
@@ -46,9 +28,4 @@
 		}
 	}
 
-	&__colon {
-	}
-
-	&__period {
-	}
 }
