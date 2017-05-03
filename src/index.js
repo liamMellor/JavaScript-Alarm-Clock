@@ -3,55 +3,54 @@
 // Modules
 import Clock from './clock';
 import Timer from './timer';
-// App
+// Application
 import AlarmClock from './alarmClock';
 // Views
-import DisplayView from './displayView';
-import ControlsView from './controlsView';
-import AlarmsView from './alarmsView';
+import DisplayView from './views/displayView';
+import ControlsView from './views/controlsView';
+import AlarmsView from './views/alarmsView';
 // Controller
 import Controller from './controller';
 
 
 // Display Elements
-const hours   = document.getElementById('hours');
-const mins    = document.getElementById('minutes');
-const seconds = document.getElementById('seconds');
-const period  = document.getElementById('period');
-
+const hours        = document.getElementById('hours');
+const mins         = document.getElementById('minutes');
+const seconds      = document.getElementById('seconds');
+const period       = document.getElementById('period');
 // Control Elements
 const controlsForm = document.getElementById('controlsForm');
 const hourInput    = document.getElementById('hourInput');
 const minuteInput  = document.getElementById('minuteInput');
 const amButton     = document.getElementById('periodButton-am');
 const pmButton     = document.getElementById('periodButton-pm');
-
-// Alarms Element
-const alarms      = document.getElementById('alarms');
-const alarmsError = document.getElementById('alarmsError');
-
-
-// MVC components
-const ClockInstance          = new Clock();
-const AlarmClockApp          = new AlarmClock(ClockInstance);
-
-const AlarmClockDisplayView  = new DisplayView(hours, mins, seconds, period);
-// Pass pmButton as the initial active periodButton
-const AlarmClockControlsView = new ControlsView(hourInput, minuteInput, pmButton);
-const AlarmClockAlarmsView   = new AlarmsView(alarms, alarmsError);
+// Alarms Elements
+const alarms       = document.getElementById('alarms');
+const alarmsError  = document.getElementById('alarmsError');
 
 
-const AlarmClockController   = new Controller(AlarmClockApp, ClockInstance, AlarmClockDisplayView, AlarmClockControlsView, AlarmClockAlarmsView);
-// Bind a callback for each Date object update called from the the timer
-const TimerInstance          = new Timer(AlarmClockController.appUpdater.bind(AlarmClockController));
+// Clock Instance stores date object for the app and can return hours, mins, etc.
+const ClockInstance = new Clock();
+// App Instance
+const AlarmClockApp = new AlarmClock(ClockInstance);
+// Initialize Views with DOM elements
+const Display       = new DisplayView(hours, mins, seconds, period);
+const Controls      = new ControlsView(hourInput, minuteInput, pmButton);
+const Alarms        = new AlarmsView(alarms, alarmsError);
+// AppController initializees listeners and carries out primary business logic
+const AppController = new Controller(AlarmClockApp, ClockInstance, Display, Controls, Alarms);
+// Timer keeps time for the app. appUpdater is passed as a callback for updated Date() (1 second)
+const TimerInstance = new Timer(AppController.appUpdater.bind(AppController));
 
 
 // Initialize DOM listeners
-AlarmClockController.addPeriodButtonListeners([amButton, pmButton]);
-AlarmClockController.addControlsFormListener(controlsForm);
+AppController.addPeriodButtonListeners([amButton, pmButton]);
+AppController.addControlsFormListener(controlsForm);
 
-// Initialize the clock display
-AlarmClockDisplayView.setTime(ClockInstance);
+
+// Initialize the display
+Display.setTime(ClockInstance);
+
 
 // Start the timer.
 TimerInstance.initialize();

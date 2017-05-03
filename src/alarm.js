@@ -1,6 +1,6 @@
 'use strict';
 
-import { hoursAreValid, minutesAreValid } from './utility';
+import { hoursAreValid, minutesAreValid } from './helpers/utility';
 
 class Alarm {
 

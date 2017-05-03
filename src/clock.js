@@ -1,7 +1,10 @@
 'use strict';
 
-import { convert24Hourto12Hour, getAMorPM } from './utility';
+import { convert24Hourto12Hour, getAMorPM } from './helpers/utility';
 
+/*
+* Stores the Date (Javascript Date object) and provides getters for it's properties
+*/
 class Clock {
 
 	constructor(date) {

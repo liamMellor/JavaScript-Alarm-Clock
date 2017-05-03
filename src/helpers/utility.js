@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+* Helper functions for working with hours and minutes passed from Date object
+* Also used to verify user inputs.
+*/
 const convert24Hourto12Hour = (hours) => {
 	if (hours === 0) {
 		return 12;
@@ -19,7 +23,6 @@ const convertToDoubleDigit = (number) => {
 }
 
 const hoursAreValid = (hours) => {
-	console.log(hours);
 	return !Number.isNaN(hours) && typeof hours === 'number' & hours > 0 && hours <= 12;
 }
 

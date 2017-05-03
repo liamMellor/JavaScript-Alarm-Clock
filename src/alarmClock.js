@@ -1,8 +1,12 @@
 'use strict'
 
-import ringer from './ringer';
-import alarmsView from './alarmsView';
+import ringer from './helpers/ringer';
 
+/*
+*	@parm Clock (object Clock)
+*	Main applicaiton object
+* 	Maintains alarms and current controls period.
+*/
 class AlarmClock {
 
 	constructor(clock) {

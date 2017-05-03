@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+*	@param hoursInput (HTML element)
+*	@param minutesInput (HTML element)
+*	@param activePeriodButton (HTML element)
+*/
 class ControlsView {
 
 	constructor(hoursInput, minutesInput, activePeriodButton) {
@@ -16,8 +21,9 @@ class ControlsView {
 	}
 
 	setInputClass(valid, input) {
-		const validInputClass   = 'controls__row__input--active';
-		const invalidInputClass = 'controls__row__input--invalid'; 
+		let baseClass           = 'controls__row__input--';
+		const validInputClass   = `${baseClass}active`;
+		const invalidInputClass = `${baseClass}invalid`; 
 		if (valid) {
 			input.classList.remove(invalidInputClass);
 			input.classList.add(validInputClass);
