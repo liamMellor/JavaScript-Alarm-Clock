@@ -1,5 +1,7 @@
 'use strict'
 
+import ringer from './ringer';
+
 class AlarmClock {
 
 	constructor(clock) {
@@ -17,15 +19,13 @@ class AlarmClock {
 	}
 
 	addAlarm(alarm) {
-		console.log(alarm);
 		this.alarms.push(alarm);
 	}
 
 	checkIfAlarmShouldRing() {
 		this.alarms.forEach((alarm) => {
 			if (alarm.shouldRing(this.clock, this.period)) {
-				// Ringger.ring()
-				console.log('ring');
+				ringer();
 			}
 		});
 	}
