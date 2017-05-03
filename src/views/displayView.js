@@ -1,6 +1,6 @@
 'use strict';
 
-import { convertToDoubleDigit } from '../utility';
+import { convertToDoubleDigit } from '../helpers/utility';
 
 class DisplayView {
 
