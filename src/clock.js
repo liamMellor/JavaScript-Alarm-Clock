@@ -20,6 +20,10 @@ class Clock {
 		return this.date.getMinutes();
 	}
 
+	getSeconds() {
+		return this.date.getSeconds();
+	}
+
 	getPeriod() {
 		return getAMorPM(this.date.getHours());
 	}

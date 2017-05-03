@@ -6,32 +6,31 @@ class Display {
 
 	/*
 	*	Display accepts HTML elements making up the clock's display
-	*	@parm hoursElement
-	*	@param minutesElement
-	*	@param periodElement
+	*	@parm hoursElement (HTML element)
+	*	@param minutesElement (HTML element)
+	*	@param seconds Element (HTML element)
+	*	@param periodElement (HTML element)
 	*/
-	constructor(hoursElement, minutesElement, periodElement) {
+	constructor(hoursElement, minutesElement, secondsElement, periodElement) {
 		this.hours   = hoursElement;
 		this.minutes = minutesElement;
-		this.period  = periodElement
+		this.seconds = secondsElement;
+		this.period  = periodElement;
 	}
 
+	/*
+	* Accepts current clock object to set elements to current time
+	* @param Clock (object Clock)
+	*/
 	setTime(Clock) {
-		this.setHours(convertToDoubleDigit(Clock.getHours()));
-		this.setMinutes(convertToDoubleDigit(Clock.getMinutes()));
-		this.setPeriod(Clock.getPeriod());
+		this.setContent(this.hours, convertToDoubleDigit(Clock.getHours()))
+		this.setContent(this.minutes, convertToDoubleDigit(Clock.getMinutes()))
+		this.setContent(this.seconds, convertToDoubleDigit(Clock.getSeconds()))
+		this.setContent(this.period, Clock.getPeriod())
 	}
 
-	setHours(hours) {
-		this.hours.value = hours;
-	}
-
-	setMinutes(minutes) {
-		this.minutes.value = minutes;
-	}
-
-	setPeriod(period) {
-		this.period.value = period;
+	setContent(prop, value) {
+		prop.innerHTML = value;
 	}
 
 }
